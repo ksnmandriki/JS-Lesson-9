@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница, к которой подключен jQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    /**Вариант 1: Создать файл index80v1.html и добавить в начало страницы две кнопки: одну - для скрытия 
+элементов, другую - для отображения скрытых элементов. Настроить методы click( ) кнопок, так чтобы они то 
+скрывали, то отображали нечетные элементы с классом footerContent*/
+    $(document).ready(function () {
+      $("#but1").click(function () {
+        $('.footerContent:even').hide();
+      });
+      $("#but2").click(function () {
+        $('.footerContent:even').show();
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <button id="but1">для скрытия элементов</button>
+  <button id="but2">для отображения скрытых элементов</button>
+  <p class="footerContent">Нечетный элемент.</p>
+  <p class="footerContent">Четный элемент.</p>
+  <p class="footerContent">Нечетный элемент.</p>
+  <p class="footerContent">Четный элемент.</p>
+</body>
+
+</html>

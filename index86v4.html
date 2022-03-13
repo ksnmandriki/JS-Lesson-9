@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница, к которой подключен jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /**Вариант 4: Создать файл index86v4.html, добавить элемент формы «поле ввода», настроить для него обработку 
+    keypress, а именно случайным образом менять цвет этого поля (свойство background-color).*/
+
+        $(document).ready(function () {
+            $("input").keypress(function () {
+                let max = 255;
+                let min = 0;
+                let c = Math.floor(Math.random() * (max - min + 1)) + min;;
+                let m = Math.floor(Math.random() * (max - min + 1)) + min;;
+                let n = Math.floor(Math.random() * (max - min + 1)) + min;;
+                let color = "rgb(" + c + "," + m + "," + n + ")";
+                $("input").css("background-color", color);
+
+            })
+        });
+    </script>
+</head>
+<body>
+    Поле ввода: <input type="text" name="name"><br>
+</body>
+</html>

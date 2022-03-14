@@ -10,18 +10,16 @@
     /**Наберите в VSCode код скрипта, в котором Вам нужно проверить как с помощью библиотеки jQuery вы можете скрывать 
 и отражать HTML-элементы. Также Вы попробуете настроить время затухания и появления. Сохраните полученный 
 результат под именем index85.html*/
-    $(document).ready(function () {
-      $('input').focus(function () {
-        $(this).css('background-color','#cccccc');
-      });
-      $('input').blur(function () {
-        $(this).css('background-color', '#ffffff');
+$(document).ready(function () {
+      $('button').click(function () {
+        $('p').hide(3000);
       });
     });
   </script>
 </head>
 <body>
-Имя пользователя: <input type="text" name="fullname"><br><br>
-E-mail пользователя: <input type="text" name="email">
+<button>Спрятать</button>
+<p>Это абзац с небольшим содержанием.</p>
+<p>Это еще один маленький абзац.</p>
 </body>
 </html>
